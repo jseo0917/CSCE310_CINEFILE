@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
+body {
+  font-family: 'Chelsea Market', cursive;
+  background-color: white;
+}
+
+.navbar-color {
+  background-color: #500000;
+}
+
+.seemore {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.genres {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button-group {
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
+.form {
+  margin: 20px 38%;
+  padding: 20px;
+}
+
+.input-range__track--active {
+  background: orange !important;
+  border-color: orange !important;
+}
+.input-range__slider {
+  background: white !important;
+  border-color: white !important;
+}
+
+.input-range__slider-container { transition: none; }
+.input-range__track {
+  transition: none;
+}
+
+.input-range__label, .input-range__label--min, .input-range__label, .input-range__label--max{
+  color: white;
+}

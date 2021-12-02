@@ -1,0 +1,16 @@
+.trailer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.poster{
+    width: 250px;
+    height: 350px;
+    align-items: space-between;
+    text-align: center;
+}
+
+h4{
+    margin-top: 2vh;
+}

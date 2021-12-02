@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "machine.C": "cpp",
+        "kernel.C": "cpp"
+    }
+}
