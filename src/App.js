@@ -62,7 +62,7 @@ function App() {
     // console.log("Movie", result);
     // setMovieList([...result.results]);
     // setCurrent([...result.results]);
-
+    // console.log("GetNowPlaying");
     let local_url = `http://localhost:8080/movies/topRated/maxResults/1000`;
     fetch(local_url)
     .then(resp => resp.json())
@@ -82,7 +82,7 @@ function App() {
     console.log(keyword);
     var tmp3 = [];
     setStartSearch(1);
-
+    console.log("GetKeyword");
     fetch(`http://localhost:8080/movies/searchByTitle/${keyword}`)
     .then(resp => resp.json())
     .then(data =>              
@@ -111,6 +111,7 @@ function App() {
     console.log(rating);
     console.log(currentList); 
     if (currentList.length>0) {
+      console.log(currentList.length); 
       movieList = currentList;
       let temp = movieList.filter((item) => {
         let y = (item.vote_average>=x);
@@ -122,6 +123,7 @@ function App() {
   }
 
   const getTopRated = async() => {   
+    console.log("GetTopRated");
     let local_url = `http://localhost:8080/movies/topRated/maxResults/15`;
     fetch(local_url)
     .then(resp => resp.json())
@@ -132,38 +134,24 @@ function App() {
     setNowRated(true);    
   }
 
-  // let getSeeMore = async(page) => {    
-  //   if (page === 0) return;
-  //   let url;
-  //   if (nowPlaying) {
-  //     url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=${page}`;
-  //   } 
-  //   else if (nowKeyword) {
-  //     url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${keyword}&page=${page}&include_adult=false`;
-  //   }
-  //   else if (nowRated) {
-  //     url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${page}`;
-  //   }
-  //   try {
-  //     let data = await fetch (url);
-  //     let result = await data.json();
-  //     setMovieList([...result.results]);
-  //     setPage(page);
-  //     console.log(`Now Playing ${nowPlaying}, Now Rated ${nowRated}, Now Keyword ${nowKeyword}`)
-  //     console.log(url);
-  //     setCurrent([...result.results]);
-  //   } catch (error) {
-  //     alert("Not found!")
-  //   }
-  // }
-
   let sortMovieGenre = (currentGenre) => {
+    console.log("came here");
+    console.log(currentGenre);
+    console.log(movieList.length);
     try {
       let temp = movieList.filter((movie) => {
-        let x = movie.genre_ids.includes(currentGenre);
-        console.log(x);
-      return x;
-      })
+        console.log(movie);
+        console.log(movie.genre_id);
+        //let x = movie.genre_id.includes(currentGenre);
+        //console.log(x);
+        let x =false;
+        if (movie.genre_id === currentGenre){
+            return true;            
+        }
+        //console.log(x);
+        return x;
+      })    
+      console.log("Return failed");
       if (temp.length === 0) return;
       setMovieList(temp);
     } catch (error) {

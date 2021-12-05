@@ -49,14 +49,14 @@ export default function MovieList(props) {
                                 let description = movie.overview.split(" ").slice(0, 15);
                                 //console.log(description);
                                 //console.log(genreTotal);
+                                //console.log(movie);
                                 return (
                                     <Col className="d-flex" key={movie.id} sm="4">
                                         <Card className="flex-fill" bg="light" text="dark" border="dark" style={{ width: '18rem' }}>
                                             <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`} />
                                             <Card.Body>
-                                                <Card.Title>{movie.original_title}</Card.Title>
-                                                <ListGroup variant="flush">
-  
+                                                <Card.Title>{movie.title}</Card.Title>                                                
+                                                <ListGroup variant="flush">  
                                                     <ListGroup.Item>
                                                         <span style={{float: "bottom"}}>
                                                             <span text-align="left"><FontAwesomeIcon icon="star"/>{movie.vote_average}</span>
