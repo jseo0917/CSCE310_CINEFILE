@@ -9,7 +9,9 @@ Steps.
 
 4. https://github.com/mstacha/MovieApplicationAPI
 5. Change origins to your localhost number from MovieController.java
-6. Run from application.java
+6. Update to your password from application.properties
+7. Run from application.java
 
-7. Clone this repository
-8. npm start 
+8. Clone this repository
+9. npm start 
+10. To see movie information search movie and then click movie information
